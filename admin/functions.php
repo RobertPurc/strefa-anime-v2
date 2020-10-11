@@ -1,4 +1,15 @@
 <?php
+
+function comfirm($result){
+
+  global $conn;
+  if(!$result){
+    die("query failed ." . mysqli_error($conn));
+  }
+
+ 
+  
+}
 function insert_categories()
 {
   global $conn;
@@ -45,4 +56,7 @@ function deleteCategories()
     header("Location: categories.php");
   }
 }
+
+
+
 ?>

@@ -19,7 +19,13 @@ include "includes/header.php";
             <div class="col-md-8">
 
 <?php
-            $query = 'SELECT * FROM posts';
+if(isset($_GET['category'])){
+
+    $post_category = $_GET['category'];
+
+
+}
+            $query = "SELECT * FROM posts WHERE post_category_id = $post_category";
 
             $select_all_posts_query = mysqli_query($conn, $query);
 
@@ -30,7 +36,6 @@ include "includes/header.php";
                 $post_date = $row['post_date'];
                 $post_image = $row['post_image'];
                 $post_content = substr($row['post_content'], 0,100);
-
 
                 ?>
 
@@ -70,24 +75,8 @@ include "includes/header.php";
 ?>
               
 
-
-                <!-- Pager -->
-                <ul class="pager">
-                    <li class="previous">
-                        <a href="#">&larr; Older</a>
-                    </li>
-                    <li class="next">
-                        <a href="#">Newer &rarr;</a>
-                    </li>
-                </ul>
-
-            </div>
-
             <!-- Blog Sidebar Widgets Column -->
-         <?php
-            include 'includes/sitebar.php';
-         ?>
-
+     
         </div>
         <!-- /.row -->
 

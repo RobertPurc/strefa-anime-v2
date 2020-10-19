@@ -37,13 +37,14 @@
 
             <?php
 
-$query = "SELECT *  FROM categories LIMIT 3";
+$query = "SELECT *  FROM categories LIMIT 5";
 $select_sitebar_categories_query = mysqli_query($conn, $query);
 
 while($row = mysqli_fetch_assoc($select_sitebar_categories_query)) {
         $cat_title = $row['cat_title'];
+        $cat_id = $row['cat_id'];
 
-        echo "<li><a href='{$cat_title}'>{$cat_title} </a></li>";
+        echo "<li><a href='category.php?category=$cat_id'>{$cat_title} </a></li>";
 }
 
 ?>

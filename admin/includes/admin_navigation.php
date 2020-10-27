@@ -140,7 +140,7 @@
                         <a href="./categories.php"><i class="fa fa-fw fa-wrench"></i> Categroies</a>
                     </li>
                   
-                    <li class="active">
+                    <li class="">
                         <a href="comments.php"><i class="fa fa-fw fa-file"></i>Comments</a>
                     </li>
                     <li>
